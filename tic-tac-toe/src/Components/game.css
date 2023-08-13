@@ -1,0 +1,115 @@
+.fullgame {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    background-color: #E5E7EB;
+  }
+
+  .leftcard {
+    display: flex;
+    flex-basis: 25%;
+    justify-content: center;
+    align-items: center;
+    margin-left: 2.5rem;
+  }
+  
+  .leftcard1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 0.375rem;
+    box-shadow: 0px 25px 50px rgba(0, 0, 0, 0.25);
+  }
+  
+  .leftcard2 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #4B5563;
+  }
+  
+  .leftcard3 {
+    font-size: 1.5rem; 
+    font-family: monospace;
+  }
+
+  .middleBoard {
+    display: flex;
+    flex-basis: 50%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .middleHead {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #4B5563;
+  }
+  
+  .middleboard {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    box-shadow: 0px 25px 50px rgba(0, 0, 0, 0.25);
+    background-color: #ffffff;
+    border-radius: 0.5rem;
+  }
+  
+  .boxes {
+    display: flex;
+  }
+  
+  .rightcard{
+    display: flex;
+    flex-basis: 25%; /* Adjust the percentage according to your layout */
+    justify-content: center;
+    align-items: center;
+    margin-right: 2.5rem; /* Adjust as needed */
+  }
+  .rightcard1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 150px;
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 0.375rem; /* 6px rounded corners */
+    box-shadow: 0px 25px 50px rgba(0, 0, 0, 0.25); /* Adjust shadow values */
+  }
+  
+  .rightcard2 {
+    font-size: 1.125rem; /* 18px font size */
+    font-weight: 600;
+    color: #4B5563;
+  }
+  
+  .rightcard3 {
+    font-size: 1.5rem;
+    font-family: monospace; 
+  }
+  
+.square {
+  font-weight: bold;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #D1D5DB; /* Assuming 'border-zinc-200' color */
+  font-size: 1.5rem; /* 24px font size */
+  cursor: pointer;
+  border-radius: 0.375rem; /* 6px rounded corners */
+  transition: background-color 0.3s; /* Add a smooth transition */
+  color: #4B5563; /* Assuming 'text-neutral-600' color */
+}
+
+.square:hover {
+  background-color: #9CA3AF; /* Assuming 'hover:bg-neutral-400' color */
+}
+
+  

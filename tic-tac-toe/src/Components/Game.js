@@ -3,6 +3,7 @@ import { useRecoilState } from 'recoil'
 import ResetButton from './ResetButton';
 import { gameStateAtom, currentPlayerAtom, currentMovesAtom, currentWinnerAtom } from '../Recoil/RecoilState'
 import { postGameState, getGameState, avaliableMoves, setAvaliableMoves, getcurrentWinner, setCurrentWinnerService } from '../Assets/services/GameService';
+import './game.css'
 const Game = () => {
 
   const [gameState, setGameState] = useRecoilState(gameStateAtom);
@@ -85,7 +86,7 @@ const Game = () => {
       const response = await postGameState(newGameState);
       setGameState(response.data);
     } catch (error) {
-      throw error;
+          console.error('Error updating moves:', error);
     }
   };
 
@@ -111,7 +112,7 @@ const Game = () => {
 
   const renderSquare = (index) => {
     return (
-      <div key={index} className="text-neutral-600 font-bold w-[100px] h-[100px] flex justify-center items-center border text-2xl border-solid  cursor-pointer rounded border-zinc-200 hover:bg-neutral-400" onClick={() => handleClick(index)}>
+      <div key={index} className="square text-neutral-600 font-bold w-[100px] h-[100px] flex justify-center items-center border text-2xl border-solid  cursor-pointer rounded border-zinc-200 hover:bg-neutral-400" onClick={() => handleClick(index)}>
         {gameState[index]}
       </div>
     );
@@ -121,20 +122,20 @@ const Game = () => {
     setcurrentWinner('');
   }
   return (
-    <div className="flex h-full w-full bg-neutral-200">
+    <div className="fullgame">
       {/* left */}
-      <div className="flex basis-1/4 justify-center items-center ml-10">
-        <div className='h-[150px] w-full bg-white rounded-md shadow-2xl'>
-          <div className='text-lg font-semibold mt-10 text-neutral-700'>TURN</div>
-          <div className='text-2xl font-mono'>{getCurrentPlayer()}</div>
+      <div className=" leftcard">
+        <div className='leftcard1'>
+          <div className='leftcard2'>TURN</div>
+          <div className='leftcard3'>{getCurrentPlayer()}</div>
         </div>
       </div>
       {/* middle */}
-      <div className='flex basis-1/2 flex-col justify-center items-center'>
-        <div className='font-bold text-2xl text-neutral-700'>TIC TAC TOE</div>
-        <div className="board flex flex-col mt-[10px] shadow-2xl bg-white rounded-lg">
+      <div className='middleBoard'>
+        <div className='middleHead'>TIC TAC TOE</div>
+        <div className="middleboard ">
           {[0, 1, 2].map((row) => (
-            <div className="flex" key={row}>
+            <div className="boxes" key={row}>
               {[0, 1, 2].map((col) => renderSquare(row * 3 + col))}
             </div>
           ))}
@@ -142,10 +143,10 @@ const Game = () => {
         <ResetButton />
       </div>
       {/* right */}
-      <div className="flex basis-1/4 justify-center items-center mr-10">
-        <div className='h-[150px] w-full bg-white rounded-md shadow-2xl '>
-          <div className='text-lg font-semibold mt-10 text-neutral-700 '>Avalible Moves: {currentMoves}</div>
-          <div className='text-2xl font-mono'>{getStatus()}</div>
+      <div className="rightcard">
+        <div className='rightcard1'>
+          <div className='rightcard2'>Avalible Moves: {currentMoves}</div>
+          <div className='rightcard3'>{getStatus()}</div>
         </div>
       </div>
     </div>

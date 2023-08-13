@@ -1,10 +1,9 @@
 {
-    "gameState": {
-    },
-    "checkWinner": {
-      "name": ""
-    },
-    "avaliableMoves": {
-      "len": 9
-    }
+  "gameState": {},
+  "checkWinner": {
+    "name": ""
+  },
+  "avaliableMoves": {
+    "len": 9
   }
+}

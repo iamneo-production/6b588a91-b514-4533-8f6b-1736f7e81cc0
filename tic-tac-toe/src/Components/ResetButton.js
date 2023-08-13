@@ -2,6 +2,7 @@ import React from 'react'
 import {resetGame,setAvaliableMoves, setCurrentWinnerService} from '../Assets/services/GameService'
 import { useSetRecoilState } from 'recoil'
 import {gameStateAtom,currentPlayerAtom, currentMovesAtom, currentWinnerAtom} from '../Recoil/RecoilState'
+import './resetbutton.css'
 
 const ResetButton = () => {
   const setCurrentPlayer = useSetRecoilState(currentPlayerAtom);
@@ -9,9 +10,7 @@ const ResetButton = () => {
   const setCurrentMoves = useSetRecoilState(currentMovesAtom);
   const setcurrentWinner = useSetRecoilState(currentWinnerAtom);
 
-
-    const handleClear = () =>{
-// First try-catch block with setTimeout
+  const handleClear = () =>{
 setTimeout(async () => {
   try {
     await resetGame();
@@ -42,8 +41,7 @@ setTimeout(async () => {
       }
   return (
     <div>
-         <input className='bg-yellow-400 p-2 h-10 w-24  cursor-pointer hover:bg-yellow-500 rounded-md mt-10' type="submit" value="Reset Game" onClick={()=>handleClear()}/>
-
+         <input className='btn' type="submit" value="Reset Game" onClick={()=>handleClear()}/>
     </div>
   )
 }
