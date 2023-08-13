@@ -1,0 +1,10 @@
+{
+    "gameState": {
+    },
+    "checkWinner": {
+      "name": ""
+    },
+    "avaliableMoves": {
+      "len": 9
+    }
+  }
